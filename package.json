@@ -1,0 +1,24 @@
+{
+  "name": "spread-sheet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "googleapis": "^66.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtoyopet/nodejs-spreadsheet-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtoyopet/nodejs-spreadsheet-api/issues"
+  },
+  "homepage": "https://github.com/mtoyopet/nodejs-spreadsheet-api#readme"
+}
