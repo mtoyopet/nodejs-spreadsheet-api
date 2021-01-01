@@ -1,1 +1,1 @@
-web: node linebot.js
+web: node server.js
