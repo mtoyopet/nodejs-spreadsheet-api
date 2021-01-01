@@ -10,6 +10,7 @@ const client = new line.Client(config)
 const app = express()
 
 app.get('/', (req, res) => {
+  console.log("11111111!!!!!!!")
   res.send('Hello world')
 })
 
@@ -20,6 +21,7 @@ app.post('/webhook', line.middleware(config), (req, res) => {
 })
 
 function handleEvent(event) {
+  console.log("22222222")
   if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text event
     return Promise.resolve(null)
