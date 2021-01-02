@@ -2,7 +2,7 @@
 
 const line = require('@line/bot-sdk')
 const express = require('express')
-const spreadSheet = require('./spreadsheet.js')
+const spreadSheet = require('./spreadsheet')
 
 const config = {
   channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN,
@@ -37,7 +37,6 @@ app.post('/callback', line.middleware(config), (req, res) => {
 
 function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
-    // ignore non-text-message event
     return Promise.resolve(null)
   }
 
