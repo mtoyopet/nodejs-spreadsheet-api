@@ -36,14 +36,13 @@ app.post('/callback', line.middleware(config), (req, res) => {
 })
 
 function handleEvent(event) {
-  spreadSheet()
-  // console.log({ event })
   if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text-message event
     return Promise.resolve(null)
   }
 
   const echo = { type: 'text', text: event.message.text }
+  spreadSheet(event.message.text)
   return client.replyMessage(event.replyToken, echo)
 }
 
