@@ -2,7 +2,7 @@
 
 const line = require('@line/bot-sdk')
 const express = require('express')
-const spreadSheet = require('./spreadsheet')
+const GoogleSpreadSheet = require('./spreadsheet')
 
 const config = {
   channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN,
@@ -11,19 +11,6 @@ const config = {
 
 const client = new line.Client(config)
 const app = express()
-
-// const richMenu = {
-//   size: {
-//     width: 2500,
-//     height: 1686
-//   }
-// }
-
-// client.createRichMenu(richMenu)
-//   .then((richMenuId) => {
-//     console.log(111111111)
-//     console.log(richMenuId)
-//   })
 
 app.post('/callback', line.middleware(config), (req, res) => {
   Promise
@@ -41,7 +28,7 @@ function handleEvent(event) {
   }
 
   const echo = { type: 'text', text: event.message.text }
-  spreadSheet(event.message.text)
+  GoogleSpreadSheet(event.message.text)
   return client.replyMessage(event.replyToken, echo)
 }
 
