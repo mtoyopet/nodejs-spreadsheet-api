@@ -28,7 +28,7 @@ function handleEvent(event) {
   }
 
   const echo = { type: 'text', text: event.message.text }
-  GoogleSpreadSheet(event.message.text)
+  await GoogleSpreadSheet(event.message.text)
   return client.replyMessage(event.replyToken, echo)
 }
 
