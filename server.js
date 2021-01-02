@@ -22,7 +22,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
     })
 })
 
-function handleEvent(event) {
+async function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
     return Promise.resolve(null)
   }
