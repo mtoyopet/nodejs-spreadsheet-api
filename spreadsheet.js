@@ -2,7 +2,6 @@ require('dotenv').config()
 const { GoogleSpreadsheet } = require('google-spreadsheet')
 
 module.exports = async (text) => {
-  // async function accessSpreadSheet (text) {
   try {
     const document = new GoogleSpreadsheet(process.env.SPREAD_SHEET_ID)
 
@@ -19,7 +18,5 @@ module.exports = async (text) => {
   } catch (error) {
     console.log({ error })
   }
-  // }
-  // accessSpreadSheet()
 }
 
